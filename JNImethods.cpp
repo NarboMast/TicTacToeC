@@ -29,3 +29,8 @@ JNIEXPORT jboolean JNICALL Java_JNImethods_checkWin
   (JNIEnv *env, jobject obj, const jchar player) {
   return board->checkWin(player);
 }
+
+JNIEXPORT jboolean JNICALL Java_JNImethods_checkDraw
+  (JNIEnv *, jobject) {
+  return board->checkDraw();
+}

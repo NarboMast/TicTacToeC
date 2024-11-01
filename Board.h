@@ -17,6 +17,7 @@ public:
     explicit Board(int dimensionJ);
     char getValue(int row, int col);
     bool checkWin(char player);
+    bool checkDraw();
 };
 
 

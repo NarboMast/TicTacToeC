@@ -70,3 +70,14 @@ bool Board::checkWin(char player) {
     }
     return diagonalWin;
 }
+
+bool Board::checkDraw() {
+    for (int i = 0; i < dimensionC; i++) {
+        for (int j = 0; j < dimensionC; j++) {
+            if (board[i][j] == ' ') {
+                return false;
+            }
+        }
+    }
+    return true;
+}
