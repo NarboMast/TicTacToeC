@@ -9,18 +9,18 @@ Board::Board(const int dimensionJ) {
     board = std::vector<std::vector<char>>(dimensionJ, std::vector<char>(dimensionJ, ' '));
 }
 
-char Board::getValue(int row, int col) {
+void Board::makeMove(int row, int col) {
     if (board[row][col] == ' ') {
         if (whiteTurn) {
             board[row][col] = 'X';
-            whiteTurn = false;
-            return 'X';
         } else {
             board[row][col] = 'O';
-            whiteTurn = true;
-            return 'O';
         }
+        whiteTurn = !whiteTurn;
     }
+}
+
+char Board::getValue(int row, int col) {
     return board[row][col];
 }
 
@@ -43,6 +43,7 @@ bool Board::checkWin(char player) {
         for(int i = 0; i < dimensionC; i++) {
             if(board[i][j] != player) {
                 colWin = false;
+                break;
             }
         }
         if(colWin) {

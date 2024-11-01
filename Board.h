@@ -15,6 +15,7 @@ private:
     int dimensionC;
 public:
     explicit Board(int dimensionJ);
+    void makeMove(int row, int col);
     char getValue(int row, int col);
     bool checkWin(char player);
     bool checkDraw();

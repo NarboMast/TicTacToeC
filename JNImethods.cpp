@@ -12,6 +12,10 @@ JNIEXPORT void JNICALL Java_JNImethods_setBoard
   board = new Board(dimension);
 }
 
+JNIEXPORT void JNICALL Java_JNImethods_makeMove
+  (JNIEnv *env, jobject obj, jint row, jint col) {
+  board->makeMove(row, col);
+}
 
 JNIEXPORT void JNICALL Java_JNImethods_destroyBoard
   (JNIEnv *env, jobject obj) {
