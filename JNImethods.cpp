@@ -38,3 +38,8 @@ JNIEXPORT jboolean JNICALL Java_JNImethods_checkDraw
   (JNIEnv *, jobject) {
   return board->checkDraw();
 }
+
+JNIEXPORT void JNICALL Java_JNImethods_capture
+  (JNIEnv *env, jobject obj, jint row, jint col) {
+  board->capture(row, col);
+}

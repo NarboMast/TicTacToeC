@@ -82,3 +82,14 @@ bool Board::checkDraw() {
     }
     return true;
 }
+
+void Board::capture(int row, int col) {
+    if (board[row][col] != ' ') {
+        if (whiteTurn) {
+            board[row][col] = 'X';
+        } else {
+            board[row][col] = 'O';
+        }
+        whiteTurn = !whiteTurn;
+    }
+}

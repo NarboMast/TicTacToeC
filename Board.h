@@ -19,6 +19,7 @@ public:
     char getValue(int row, int col);
     bool checkWin(char player);
     bool checkDraw();
+    void capture(int row, int col);
 };
 
 
